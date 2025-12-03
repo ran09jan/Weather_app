@@ -49,7 +49,7 @@ npm install
 ### 3. Configure API Key
 
 1. Open `src/App.js`
-2. Find the line: `const API_KEY = '15e273246d0a465790c61136253007';`
+2. Find the line: `const API_KEY = 'api_key';`
 3. Replace the existing key with your actual API key from WeatherAPI
 
 Example:
