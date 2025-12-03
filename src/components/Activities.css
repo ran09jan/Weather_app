@@ -1,0 +1,457 @@
+.activities-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: slideInRight 0.6s ease;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.activities-header {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.activities-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.activities-icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.activities-title h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d3436;
+  margin: 0;
+}
+
+.activities-subtitle {
+  font-size: 1rem;
+  color: #636e72;
+  font-weight: 400;
+  margin: 0;
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: rgba(116, 185, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(116, 185, 255, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.activity-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(116, 185, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.activity-item:hover::before {
+  left: 100%;
+}
+
+.activity-item:hover {
+  background: rgba(116, 185, 255, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(116, 185, 255, 0.15);
+  border-color: rgba(116, 185, 255, 0.2);
+}
+
+.activity-icon {
+  font-size: 2rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: all 0.3s ease;
+}
+
+.activity-item:hover .activity-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.activity-content {
+  flex: 1;
+}
+
+/* Activity Header with Google Maps Button */
+.activity-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.activity-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3436;
+  margin: 0;
+  transition: color 0.3s ease;
+  flex: 1;
+}
+
+.activity-item:hover .activity-name {
+  color: #0984e3;
+}
+
+/* Google Maps Button */
+.google-maps-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: linear-gradient(135deg, rgba(234, 67, 53, 0.1), rgba(234, 67, 53, 0.05));
+  border: 1px solid rgba(234, 67, 53, 0.2);
+  border-radius: 16px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #ea4335;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+  flex-shrink: 0;
+}
+
+.google-maps-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(234, 67, 53, 0.1), transparent);
+  transition: left 0.4s ease;
+}
+
+.google-maps-btn:hover::before {
+  left: 100%;
+}
+
+.google-maps-btn:hover {
+  background: linear-gradient(135deg, rgba(234, 67, 53, 0.15), rgba(234, 67, 53, 0.08));
+  border-color: rgba(234, 67, 53, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 12px rgba(234, 67, 53, 0.2);
+}
+
+.google-maps-btn:active {
+  transform: translateY(0);
+}
+
+.maps-icon {
+  font-size: 0.7rem;
+  transition: all 0.3s ease;
+}
+
+.google-maps-btn:hover .maps-icon {
+  transform: scale(1.1);
+}
+
+.maps-text {
+  font-size: 0.7rem;
+  font-weight: 500;
+  white-space: nowrap;
+  z-index: 1;
+  position: relative;
+}
+
+.activity-description {
+  font-size: 0.9rem;
+  color: #636e72;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.activity-item:hover .activity-description {
+  color: #2d3436;
+}
+
+/* Activity Links Styles */
+.activity-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.activity-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  background: linear-gradient(135deg, rgba(0, 184, 148, 0.1), rgba(0, 184, 148, 0.05));
+  border: 1px solid rgba(0, 184, 148, 0.2);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #00a085;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.activity-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 184, 148, 0.1), transparent);
+  transition: left 0.4s ease;
+}
+
+.activity-link:hover::before {
+  left: 100%;
+}
+
+.activity-link:hover {
+  background: linear-gradient(135deg, rgba(0, 184, 148, 0.15), rgba(0, 184, 148, 0.08));
+  border-color: rgba(0, 184, 148, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 184, 148, 0.2);
+}
+
+.activity-link:active {
+  transform: translateY(0);
+}
+
+.link-icon {
+  font-size: 0.7rem;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.activity-link:hover .link-icon {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.link-text {
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  z-index: 1;
+  position: relative;
+}
+
+.external-icon {
+  font-size: 0.7rem;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  transform: translateY(-1px);
+}
+
+.activity-link:hover .external-icon {
+  opacity: 1;
+  transform: translateY(-1px) scale(1.1);
+}
+
+/* Different link color variations */
+.activity-link:nth-child(even) {
+  background: linear-gradient(135deg, rgba(116, 185, 255, 0.1), rgba(116, 185, 255, 0.05));
+  border-color: rgba(116, 185, 255, 0.2);
+  color: #0984e3;
+}
+
+.activity-link:nth-child(even):hover {
+  background: linear-gradient(135deg, rgba(116, 185, 255, 0.15), rgba(116, 185, 255, 0.08));
+  border-color: rgba(116, 185, 255, 0.3);
+  box-shadow: 0 4px 16px rgba(116, 185, 255, 0.2);
+}
+
+.activities-toggle {
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+  border-top: 1px solid rgba(116, 185, 255, 0.1);
+}
+
+.toggle-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, rgba(116, 185, 255, 0.1), rgba(116, 185, 255, 0.05));
+  border: 1px solid rgba(116, 185, 255, 0.2);
+  border-radius: 50px;
+  color: #0984e3;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.toggle-button:hover {
+  background: linear-gradient(135deg, rgba(116, 185, 255, 0.15), rgba(116, 185, 255, 0.08));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(116, 185, 255, 0.2);
+}
+
+.toggle-button:active {
+  transform: translateY(0);
+}
+
+.toggle-icon {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.toggle-button:hover .toggle-icon {
+  transform: translateY(-1px);
+}
+
+/* Special effects for different weather conditions */
+.activities-card[data-weather="sunny"] {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 245, 157, 0.1));
+}
+
+.activities-card[data-weather="rainy"] {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(116, 185, 255, 0.1));
+}
+
+.activities-card[data-weather="snowy"] {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(240, 248, 255, 0.5));
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .activities-card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .activities-title {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .activities-icon {
+    font-size: 1.8rem;
+  }
+
+  .activities-title h3 {
+    font-size: 1.3rem;
+  }
+
+  .activities-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .activities-grid {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .activity-item {
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .activity-icon {
+    font-size: 1.5rem;
+  }
+
+  .activity-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .activity-name {
+    font-size: 1rem;
+  }
+
+  .google-maps-btn {
+    padding: 3px 6px;
+    font-size: 0.65rem;
+    align-self: flex-end;
+  }
+
+  .maps-icon, .maps-text {
+    font-size: 0.65rem;
+  }
+
+  .activity-description {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+
+  .activity-links {
+    gap: 4px;
+    margin-top: 6px;
+  }
+
+  .activity-link {
+    padding: 5px 8px;
+    font-size: 0.7rem;
+  }
+
+  .link-text {
+    font-size: 0.7rem;
+  }
+
+  .link-icon, .external-icon {
+    font-size: 0.65rem;
+  }
+
+  .toggle-button {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Tablet responsiveness */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .activities-grid {
+    grid-template-columns: 1fr;
+  }
+} 
